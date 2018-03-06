@@ -8,6 +8,8 @@ public class Rocket : MonoBehaviour {
     AudioSource audio;
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainThrust = 50f;
+    public GameObject rocketPrefab;
+    public GameObject launchPad;
 	// Use this for initialization
 	void Start () {
         rigidBody = GetComponent<Rigidbody>();
@@ -64,6 +66,28 @@ public class Rocket : MonoBehaviour {
 
 
 
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("collider");
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                Debug.Log("OK");
+                break;
+            case "Fuel":
+                Debug.Log("got  fuel");
+                Destroy(collision.gameObject);
+                break;
+            default:
+                Debug.Log("dead");
+                Instantiate(rocketPrefab, launchPad.transform);
+                Destroy(gameObject);
+                
+                Debug.Log("here");
+                break;
         }
     }
 }
