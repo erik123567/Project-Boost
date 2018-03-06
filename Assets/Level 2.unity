@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: db6f01d61d2bc4d4aa523a1396aa91f9,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -279,7 +280,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67cd96aa9aa2a134faa75e8f7b12a91b, type: 2}
+      objectReference: {fileID: 2100000, guid: e0a377cfa5b8fc649a290ea412f5b093, type: 2}
     - target: {fileID: 1241094657638234, guid: a7af92c18dea37c488353d41d520f186, type: 2}
       propertyPath: m_Name
       value: Launch Pad (1)
@@ -616,11 +617,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 23588705391744786, guid: a7af92c18dea37c488353d41d520f186,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 67cd96aa9aa2a134faa75e8f7b12a91b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7af92c18dea37c488353d41d520f186, type: 2}
   m_IsPrefabParent: 0
@@ -631,49 +627,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 28.1
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4355509851621216, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+    - target: {fileID: 4422989705444720, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 23588705391744786, guid: a7af92c18dea37c488353d41d520f186,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 67cd96aa9aa2a134faa75e8f7b12a91b, type: 2}
-    - target: {fileID: 1241094657638234, guid: a7af92c18dea37c488353d41d520f186, type: 2}
-      propertyPath: m_Name
-      value: Launch Pad (2)
+    - target: {fileID: 1127249853721812, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a7af92c18dea37c488353d41d520f186, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: dfec03bdff9a42842a9e25b3105bb20b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1076103481
 Prefab:
