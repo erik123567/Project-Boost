@@ -30,8 +30,23 @@ public class Rocket : MonoBehaviour {
 
     void ProcessInput()
     {
-        Thrust();
-        Rotate();
+        if(state == State.Alive)
+        {
+            Thrust();
+            Rotate();
+        }
+  
+        NextLevelDebug();
+
+    }
+
+ 
+    private void NextLevelDebug()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextScene();
+        }
     }
 
     private void Rotate()
@@ -122,12 +137,18 @@ public class Rocket : MonoBehaviour {
 
     private void ReloadCurrent()
     {
-
+ 
         SceneManager.LoadScene(gameObject.scene.buildIndex);
     }
 
     void LoadNextScene()
     {
+        
+        if (gameObject.scene.buildIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(0);
+        }
+
         SceneManager.LoadScene(gameObject.scene.buildIndex+1);
     }
 }
