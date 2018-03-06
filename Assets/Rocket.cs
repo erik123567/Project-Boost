@@ -15,6 +15,7 @@ public class Rocket : MonoBehaviour {
     State state = State.Alive;
     [SerializeField] AudioClip mainEngine, death, success;
     [SerializeField] ParticleSystem mainEngineParticles, deathParticles, successParticles;
+    [SerializeField] float levelLoadDelay = 2f;
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
@@ -107,7 +108,7 @@ public class Rocket : MonoBehaviour {
         audio.Stop();
         deathParticles.Play();
         audio.PlayOneShot(death);
-        Invoke("ReloadCurrent", 1f);
+        Invoke("ReloadCurrent", levelLoadDelay);
     }
 
     private void StartSuccess()
@@ -116,17 +117,17 @@ public class Rocket : MonoBehaviour {
         audio.Stop();
         successParticles.Play();
         audio.PlayOneShot(success);
-        Invoke("LoadNextScene", 1f); // parametericze
+        Invoke("LoadNextScene", levelLoadDelay); // parametericze
     }
 
     private void ReloadCurrent()
     {
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(gameObject.scene.buildIndex);
     }
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(gameObject.scene.buildIndex+1);
     }
 }
