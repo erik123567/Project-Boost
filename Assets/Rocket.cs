@@ -83,7 +83,6 @@ public class Rocket : MonoBehaviour {
                 break;
             default:
                 Debug.Log("dead");
-                Instantiate(rocketPrefab, launchPad.transform);
                 Destroy(gameObject);
                 
                 Debug.Log("here");
