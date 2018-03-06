@@ -13,8 +13,10 @@ public class Rocket : MonoBehaviour {
     public GameObject rocketPrefab;
     public GameObject launchPad;
     State state = State.Alive;
-	// Use this for initialization
-	void Start () {
+    [SerializeField] AudioClip mainEngine, death, success;
+    [SerializeField] ParticleSystem mainEngineParticles, deathParticles, successParticles;
+    // Use this for initialization
+    void Start () {
         rigidBody = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
 	}
@@ -58,14 +60,16 @@ public class Rocket : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space))
         {
             //  print("thrusting");
-            rigidBody.AddRelativeForce(Vector3.up * mainThrust);
+            rigidBody.AddRelativeForce(Vector3.up * mainThrust) ;
             if (!audio.isPlaying)
             {
-                audio.Play();
+                audio.PlayOneShot(mainEngine);
+                mainEngineParticles.Play();
             }
             else
             {
                 audio.Stop();
+                mainEngineParticles.Stop();
             }
 
 
@@ -89,15 +93,30 @@ public class Rocket : MonoBehaviour {
                 Destroy(collision.gameObject);
                 break;
             case "Finish":
-                state = State.Trancending;
-                Invoke("LoadNextScene", 1f); // parametericze
+                StartSuccess();
                 break;
             default:
-                state = State.Dying;
-                Invoke("ReloadCurrent", 1f);
-                Debug.Log("here");
+                StartDeath();
                 break;
         }
+    }
+
+    private void StartDeath()
+    {
+        state = State.Dying;
+        audio.Stop();
+        deathParticles.Play();
+        audio.PlayOneShot(death);
+        Invoke("ReloadCurrent", 1f);
+    }
+
+    private void StartSuccess()
+    {
+        state = State.Trancending;
+        audio.Stop();
+        successParticles.Play();
+        audio.PlayOneShot(success);
+        Invoke("LoadNextScene", 1f); // parametericze
     }
 
     private void ReloadCurrent()
